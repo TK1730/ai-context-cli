@@ -1,0 +1,29 @@
+{
+  "name": "Go Development",
+  "image": "mcr.microsoft.com/devcontainers/go:1.23-bookworm",
+
+  // Configure tool-specific properties.
+  "customizations": {
+    // Configure properties specific to VS Code.
+    "vscode": {
+      // Set *default* container-specific settings.json values on container create.
+      "settings": {
+        "go.toolsManagement.checkForUpdates": "local",
+        "go.useLanguageServer": true,
+        "gopls": {
+          "ui.semanticTokens": true
+        }
+      },
+      // Add the IDs of extensions you want installed when the container is created.
+      "extensions": [
+        "golang.go"
+      ]
+    }
+  },
+
+  // Use 'postCreateCommand' to run commands after the container is created.
+  "postCreateCommand": "go version",
+
+  // Use 'remoteUser' to connect as a non-root user.
+  "remoteUser": "vscode"
+}
